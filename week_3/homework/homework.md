@@ -59,7 +59,7 @@ WHERE fare_amount = 0
 #### Question - 5 - create partation table
 ```sql
 CREATE OR REPLACE TABLE `sacred-dahlia-449815-m5.nytaxi.fhv_partitioned_tripdata`
-PARTITION BY DATE(dropoff_datetime)
+PARTITION BY DATE(tpep_dropoff_datetime)
 CLUSTER BY dispatching_base_num AS (
   SELECT * FROM `sacred-dahlia-449815-m5.nytaxi.fhv_tripdata`
 );
